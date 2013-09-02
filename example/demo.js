@@ -1,4 +1,4 @@
-var cli = require('../clima-tempo');
+var cli = require('../lib/clima-tempo');
 
 var callback = function(error, result) {
     if (error) {
@@ -9,7 +9,7 @@ var callback = function(error, result) {
     }
 }
 //type = Default or  Extended
-cli.days('3156',type,callBack);
+cli.days('3156',"Extended",callback);
 cli.nowFromPage('3156',callback);
 cli.fullFromPage('3156',callback);
 cli.trendsFromPage('3156',callback);
