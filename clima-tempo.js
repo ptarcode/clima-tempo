@@ -23,7 +23,7 @@ var callBackParser = function(error, result) {
     }
 }
 
-var loadDays = function(url,limit) {
+var loadDays = function(url) {
 	var xhr = new XMLHttpRequest();
 	xhr.onreadystatechange = function(){
 		
@@ -36,7 +36,7 @@ var loadDays = function(url,limit) {
 	xhr.send();
 }
 
-var days = function(codCity,qtdDays,type,callBack) {
+var days = function(codCity,type,callBack) {
 	
 	callBackExternal = callBack;
 	qtdDaysExternal  = qtdDays;
@@ -48,7 +48,7 @@ var days = function(codCity,qtdDays,type,callBack) {
 	
 	url = type === 'Default' ? urlPadrao : urlEstendida;
 	
-	loadDays(url,qtdDays)
+	loadDays(url)
 }
 
 // FromPage
