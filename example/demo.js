@@ -27,17 +27,17 @@ var req = http.request(options, function(response) {
 	  // sys.puts($('p#tit-momento').text());
 	  
 	  var previsao = {
-					  'last_update' : $('#atualizado .paragrafo-padrao').text(),
+					  'last_update' : $('.subtitle-padrao').eq(2).text(),
 				      'wind'        : { 'velocity'  : $('ul#dados-momento li').eq(3).children().slice(1).eq(0).text(),
 				                        'direction' : cli.wind['br'][$('ul#dados-momento li').eq(0).children().slice(1).eq(0).text()]
 				                    },
 				      'moisture'     : $('ul#dados-momento li').eq(4).children().slice(1).eq(0).text(),
 				      'condition'    : $('ul#dados-momento li').eq(1).children().slice(1).eq(0).text(),
 				      'pression'     : $('ul#dados-momento li').eq(2).children().slice(1).eq(0).text(),
-				      'temperature'  : $('span.left temp-momento top10').text()
+				      'temperature'  : $('.temp-momento').text()
 	 } 
 
-	 // console.log(previsao);console.log('====================');
+	 //console.log(previsao);console.log('====================');
 	 
 var fullFromPage = function() {
 	
@@ -45,7 +45,7 @@ var fullFromPage = function() {
 	
 	for (var i=0;i<5;i++) {
 		previsions.push({ 
-			'last_update'                 : $('.paragrafo-padrao').html(),
+			'last_update'                 : $('.top20 p.paragrafo-padrao').eq(5).text(),
 			'date'                        : $('.topo-box .data-prev').eq(i+1).text(),
 			'condition'                   : $('.box-prev-completa .fraseologia-prev').eq(i).text(),
 			'wind'                        : strip($('.box-prev-completa .velocidade-vento-prev-completa').eq(i).children().eq(0).text()),
