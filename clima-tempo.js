@@ -1,8 +1,10 @@
-var http   = require('http');
-var parser = require('libxml-to-js');
-var sys    = require('util');
+var http   	  = require('http');
+var parser 	  = require('libxml-to-js');
+var sys    	  = require('util');
+var cheerio = require('cheerio');
+
 var previsoes = new Array;
-var callBackInject;
+var callBackExternal,qtdDaysExternal;
 
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
@@ -18,7 +20,7 @@ var callBackParser = function(error, result) {
 			result[i].tempo = conditionLabel[result[i].tempo];
 		 }
 		 
-		 callBackInject(result);
+		 callBackExternal(result);
     }
 }
 
@@ -35,22 +37,22 @@ var loadDays = function(url,limit) {
 	xhr.send();
 }
 
-
-var days = function(codCity,qtdDays,callBack) {
+var days = function(codCity,qtdDays,type,callBack) {
 	
-	callBackInject = callBack;
 	
+	
+	callBackExternal = callBack;
+	qtdDaysExternal  = qtdDays;
+	type = typeof type !== 'undefined' ? type : 'Default';
+	
+	var url;
 	var urlPadrao    = "http://servicos.cptec.inpe.br/XML/cidade/7dias/"+codCity+"/previsao.xml";
-	  
 	var urlEstendida = "http://servicos.cptec.inpe.br/XML/cidade/"+codCity+"/estendida.xml";
 	
-	loadDays(urlPadrao,qtdDays)
-
+	url = type === 'Default' ? urlPadrao : urlEstendida;
+	
+	loadDays(url,qtdDays)
 }
-
-exports.days 	 = days;
-exports.loadDays = loadDays;
-
 
 var conditionLabel = {
     
@@ -95,6 +97,79 @@ var conditionLabel = {
 	'ppt' : 'Possibilidade de Pancadas de Chuva a Tarde',
 	'ppm' : 'Possibilidade de Pancadas de Chuva pela Manhã'
 }
+
+var wind = {
+
+       "br" : 
+         {
+           "N"   : "Norte",
+           "S"   : "Sul",
+           "E"   : "Leste",
+           "W"   : "Oeste",
+           "NE"  : "Nordeste",
+           "NW"  : "Noroeste",
+           "SE"  : "Sudeste",
+           "SW"  : "Sudoeste",
+           "ENE" : "Les-nordeste",
+           "ESE" : "Lés-sudeste",
+           "SSE" : "Su-sudeste",
+           "NNE" : "Nor-nordeste",
+           "NNW" : "Nor-noroeste",
+           "SSW" : "Su-sudoeste",
+           "WSW" : "Oés-sudoeste",
+           "WNW" : "Oés-noroeste"
+         },
+       "en" : 
+         {
+           "N"    : "North",
+           "S"    : "South",
+           "E"    : "East",
+           "W"    : "West",
+           "NE"   : "Northeast",
+           "NW"   : "Northwest",
+           "SE"   : "Southeast",
+           "SW"   : "Southwest",
+           "ENE"  : "east-northeast",
+           "ESE"  : "east-southeast",
+           "SSE"  : "south-southeast",
+           "NNE"  : "north-northeast",
+           "NNO"  : "north-northwest",
+           "SSWO" : "south-southwest",
+           "OSO"  : "west-southwest",
+           "ONO"  : "west-northwest"
+         }
+}
+ 
+var teste = function(){ 
+var options = {
+  hostname: 'http://www.climatempo.com.br/previsao-do-tempo/cidade/3156/empty',
+  port: 443,
+  path: '/',
+  method: 'GET'
+};
+
+  https.request(options, function(res) {
+  console.log("statusCode: ", res.statusCode);
+  console.log("headers: ", res.headers);
+
+  res.on('data', function(d) {
+    process.stdout.write(d);
+  });
+});
+
+req.end();
+
+req.on('error', function(e) {
+  console.error(e);
+  
+});
+
+}
+
+exports.days 	 = days;
+exports.loadDays = loadDays;
+exports.teste 	 = teste;
+exports.wind 	 = wind;
 
 
 // nome Disck Chopp NovaFriburgo
