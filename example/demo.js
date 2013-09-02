@@ -82,7 +82,7 @@ var trendsFromPage = function() {
 	return previsions;
 }
       
-      console.log(trendsFromPage());console.log('====================');
+      console.log(trendsFromPage());console.log('====================');    
 	 
 	});
 });
