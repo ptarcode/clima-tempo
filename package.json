@@ -1,6 +1,6 @@
 {
   "name"		: "clima-tempo",
-  "version"		: "0.0.2",
+  "version"		: "0.0.3",
   "main"		: "./lib/clima-tempo.js",
   "description" : "Communication with Clima Tempo accessing information about the weather of Brazil.",
   "dependencies": {
@@ -32,6 +32,6 @@
   },
   "readme": "",
   "readmeFilename": "",
-  "_id": "clima-tempo@0.0.2",
-  "_from": ""
+  "_id": "clima-tempo@0.0.3",
+  "_from": "clima-tempo@"
 }
