@@ -1,0 +1,37 @@
+{
+  "name"		: "clima-tempo",
+  "version"		: "0.0.2",
+  "main"		: "./lib/clima-tempo.js",
+  "description" : "Communication with Clima Tempo accessing information about the weather of Brazil.",
+  "dependencies": {
+    "cherrio"     : ">=0.12.1",
+    "libxml-to-js": ">=0.3.11",
+    "libxml-to-js": ">=1.6.0"
+  },
+  "engines": {
+    "node" : ">=0.10.5"
+  },
+  "homepage": "https://github.com/ptarcode/clima-tempo",
+  "author": {
+    "name" : "Paulo de Tarço",
+    "email": "ptarcode@gmail.com",
+    "url"  : "http://www.http://ptarcode.github.io/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ptarcode/clima-tempo"
+  },
+  "keywords": [
+    "clima-tempo",
+    "weather",
+    "clima",
+    "tempo"
+  ],
+  "scripts": {
+    "test": ""
+  },
+  "readme": "",
+  "readmeFilename": "",
+  "_id": "clima-tempo@0.0.2",
+  "_from": ""
+}
