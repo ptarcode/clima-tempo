@@ -4,7 +4,7 @@
   "main"		: "./lib/clima-tempo.js",
   "description" : "Communication with Clima Tempo accessing information about the weather of Brazil.",
   "dependencies": {
-    "cherrio"     : ">=0.12.1",
+    "cheerio"     : ">=0.12.1",
     "libxml-to-js": ">=0.3.11",
     "libxml-to-js": ">=1.6.0"
   },
