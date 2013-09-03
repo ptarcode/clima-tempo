@@ -6,7 +6,6 @@ Communication with Clima Tempo accessing information about the weather of Brazil
 
 
 ## Usage
-     ...
 		var clima = require(clima-tempo);
 			 
 		var callback = function(error, result) {
@@ -17,7 +16,6 @@ Communication with Clima Tempo accessing information about the weather of Brazil
 		    	......
 		    }
 		}
-	 ...
 
 ### .days
 
@@ -149,9 +147,9 @@ Communication with Clima Tempo accessing information about the weather of Brazil
 
 ## Dependencies
 
-    cherrio     : ">=0.12.1",
-    libxml-to-js: ">=0.3.11",
-    libxml-to-js: ">=1.6.0"
+    cherrio       : ">=0.12.1",
+    libxml-to-js  : ">=0.3.11",
+    xmlhttprequest: ">=1.6.0"
 
 ## Contributing
 
