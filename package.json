@@ -1,12 +1,12 @@
 {
   "name"		: "clima-tempo",
-  "version"		: "0.0.3",
+  "version"		: "0.0.6",
   "main"		: "./lib/clima-tempo.js",
   "description" : "Communication with Clima Tempo accessing information about the weather of Brazil.",
   "dependencies": {
-    "cheerio"     : ">=0.12.1",
-    "libxml-to-js": ">=0.3.11",
-    "libxml-to-js": ">=1.6.0"
+    "cheerio"       : ">=0.12.1",
+    "libxml-to-js"  : ">=0.3.11",
+    "xmlhttprequest": ">=1.6.0"
   },
   "engines": {
     "node" : ">=0.10.5"
@@ -31,7 +31,7 @@
     "test": ""
   },
   "readme": "",
-  "readmeFilename": "",
-  "_id": "clima-tempo@0.0.3",
+  "readmeFilename": "README.md",
+  "_id": "clima-tempo@0.0.6",
   "_from": "clima-tempo@"
 }
