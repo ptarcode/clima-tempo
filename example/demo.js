@@ -12,4 +12,4 @@ var callback = function(error, result) {
 // cli.days('3156',"Extended",callback);
 // cli.nowFromPage('3156',callback);
 // cli.fullFromPage('3156',callback);
-cli.trendsFromPage('3156',callback);
+cli.nowFromPage('3156',callback);

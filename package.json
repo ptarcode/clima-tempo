@@ -1,6 +1,6 @@
 {
   "name"		: "clima-tempo",
-  "version"		: "0.0.7",
+  "version"		: "0.0.8",
   "main"		: "./lib/clima-tempo.js",
   "description" : "Communication with Clima Tempo accessing information about the weather of Brazil.",
   "dependencies": {
@@ -22,6 +22,7 @@
     "url": "git://github.com/ptarcode/clima-tempo"
   },
   "keywords": [
+    "climatempo",
     "clima-tempo",
     "weather",
     "clima",
@@ -32,6 +33,6 @@
   },
   "readme": "",
   "readmeFilename": "README.md",
-  "_id": "clima-tempo@0.0.7",
+  "_id": "clima-tempo@0.0.8",
   "_from": "clima-tempo@"
 }
